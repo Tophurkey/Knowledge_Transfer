@@ -1,0 +1,62 @@
+/*
+This notebook is meant to serve as a brief training and introduction on how to use Basic SQL Commands to query but these general techniques are applicable on any Microsoft SQL Server System.
+
+Topics to Include:
+
+-Viewing the top of tables initial exploration
+
+-Basic SQL Query structure and Keywords
+
+-Types of Where Filters
+
+-Joins for gathering Data
+
+-Database Exploration and Schemas
+
+-What is a View vs a Table (Using the Prod DB)
+
+-Advanced Topics
+*/
+
+--Performing a "Select Top 1000" on a Table via Right Click
+--We used FST.ProcessRecord in the SensorManufacturing_G7_DEV
+--The code this creates is seen below:
+
+SELECT TOP (1000) 
+  FROM 
+  
+ /*
+ If needed the "TOP (1000)" can be changed to "TOP (10)" or any other number of rows you would like to limit or expand your view to. 
+ The idea is that this would help reduce query time and size when trying to just get a quick snapshot of the data you are looking at. 
+ This is a great feature for developing a query and then removing it for running the full developed query.
+ */
+
+--Basic SQL Structure
+
+/*
+SELECT Statements are where you can specify the columns separated by commas
+Which are requested for the results and execute a select few
+Functions such as TOP or DISTINCT
+*/
+
+SELECT TOP (10) 
+
+/*
+The FROM statement is the Pointer on where to pull the Data From
+This is the most critical piece as you definitely need to know where
+The data you are looking at is coming from and ensure it is the correct
+Table you need. Also different tables may have different columns.
+This information is in the format of "FROM DatabaseName.SchemaName.TableName"
+*/
+
+FROM
+
+/*
+The Where Statement is the one which is the most useful for filtering your data
+and is usually the one that will become the most verbose. In a WHERE statement you
+can joing multiple filters together with boolean statements such as "AND" and "OR".
+Most WHERE statements have the format of "WHERE ColumnName like 'Value'"
+*/
+
+WHERE 
+
